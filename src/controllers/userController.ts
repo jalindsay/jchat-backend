@@ -2,6 +2,9 @@ import { Request, Response } from "express";
 import { Pool } from "pg";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const pool = new Pool({
   user: "postgres",
@@ -11,8 +14,7 @@ const pool = new Pool({
   port: 5432,
 });
 
-const secretKey =
-  "aC^CyEmfKicDHARQpHe6X3ezgki@Sk6eLW$F7daQHASJ3Fii!*xV!6@gomy8i&KT";
+const secretKey = process.env.JWT_SECRET ?? "";
 
 export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
