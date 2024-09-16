@@ -1,7 +1,9 @@
 import express from "express";
 import { getUser, listUsers, login } from "./controllers/userController";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const port = 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
