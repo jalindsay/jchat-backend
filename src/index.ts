@@ -9,7 +9,6 @@ const port = 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
-// TODO: get usr by id
 app.get("/user/:id", authenticateToken, getUser);
 
 app.get("/users", authenticateToken, listUsers);
@@ -18,7 +17,7 @@ app.get("/", (req, res) => {
   return res.send("Root API endpoint hit");
 });
 
-// TODO: create user
+// TODO: create user endpoint
 app.post("/user");
 
 app.post("/login", login);

@@ -29,6 +29,9 @@ export const getUser = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    // Redact password hash
+    result.rows[0].password = "REDACTED";
+
     // Send user data as response
     res.json(result.rows[0]);
   } catch (error) {
