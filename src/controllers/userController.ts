@@ -85,7 +85,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       secretKey,
       { expiresIn: "1h" }
     );
-    res.json({ token });
+    res.json({ token, username: user.username, id: user.id });
   } catch (error) {
     console.error("Error querying the database:", error);
     res.status(500).send("Internal Server Error");
