@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
