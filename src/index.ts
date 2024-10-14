@@ -5,7 +5,7 @@ import { authenticateToken } from "./middleware/authMiddleware";
 
 const app = express();
 app.use(cors());
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
@@ -23,5 +23,5 @@ app.post("/user");
 app.post("/login", login);
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });

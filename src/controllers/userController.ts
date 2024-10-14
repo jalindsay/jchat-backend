@@ -14,7 +14,7 @@ const pool = new Pool({
   port: 5432,
 });
 
-const secretKey = process.env.JWT_SECRET ?? "";
+const secretKey = process.env.JWT_SECRET || "";
 
 export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
