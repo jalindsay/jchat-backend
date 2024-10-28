@@ -7,11 +7,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "jchat",
-  password: "password",
-  port: 5432,
+  user: process.env.USER || "postgres",
+  host: process.env.HOST || "localhost",
+  database: process.env.DATABASE || "jchat",
+  password: process.env.PASSWORD || "password",
+  port: parseInt(process.env.DB_PORT || "5432"),
 });
 
 const secretKey = process.env.JWT_SECRET || "";
